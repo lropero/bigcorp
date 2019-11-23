@@ -1,0 +1,19 @@
+{
+  "name": "bigcorp",
+  "version": "1.0.0",
+  "description": "Glide code challenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lropero/bigcorp.git"
+  },
+  "author": "Luciano Ropero <lropero@gmail.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/lropero/bigcorp/issues"
+  },
+  "homepage": "https://github.com/lropero/bigcorp#readme"
+}
