@@ -1,10 +1,27 @@
 {
   "name": "bigcorp",
   "version": "1.0.0",
-  "description": "Glide code challenge.",
-  "main": "index.js",
+  "description": "Glide's code challenge.",
+  "private": true,
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -f ./npm-*.log && rm -f ./package-lock.json && rm -rf ./node_modules && npm cache verify",
+    "lint": "npx standard --fix",
+    "nuke": "npm run clean && npm install",
+    "start": "webpack-dev-server",
+    "upgrade": "npx upgradeps -n"
   },
   "repository": {
     "type": "git",
@@ -12,8 +29,5 @@
   },
   "author": "Luciano Ropero <lropero@gmail.com>",
   "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/lropero/bigcorp/issues"
-  },
   "homepage": "https://github.com/lropero/bigcorp#readme"
 }
