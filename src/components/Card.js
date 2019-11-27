@@ -72,7 +72,7 @@ const Card = ({ employee, getStaff }) => {
   const { opacity, scale } = useSpring({
     config: config.wobbly,
     from: { opacity: 0, scale: 0.9 },
-    to: { opacity: hovered ? 0.7 : 1, scale: 1 }
+    to: { opacity: hovered ? 0.7 : 1, scale: hovered ? 0.98 : 1 }
   })
 
   return (
