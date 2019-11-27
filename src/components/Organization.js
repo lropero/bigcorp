@@ -21,11 +21,13 @@ const Organization = ({ theme }) => {
   }, [])
 
   const generateGetStaff = (id) => async () => {
-    const staff = await api.staff(id)
-    for (const employee of staff) {
-      dispatchEmployee({ payload: { employee }, type: 'ADD' })
+    if (!Array.isArray(employees[id].staff)) { // Avoid unnecessary API calls
+      const staff = await api.staff(id)
+      for (const employee of staff) {
+        dispatchEmployee({ payload: { employee }, type: 'ADD' })
+      }
+      dispatchEmployee({ payload: { ids: staff.map((employee) => employee.id), managerId: id }, type: 'ADD_STAFF' })
     }
-    dispatchEmployee({ payload: { ids: staff.map((employee) => employee.id), managerId: id }, type: 'ADD_STAFF' })
   }
 
   const renderStaff = (staff) => {
