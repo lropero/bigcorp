@@ -2,9 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { animated, config, useSpring } from 'react-spring'
 
+import avatar from 'bigcorp/src/assets/avatar.png'
+
 import 'typeface-open-sans'
 import 'typeface-overlock'
-import avatar from 'bigcorp/src/assets/avatar.png'
 
 const Avatar = styled.img`
   border-radius: 50%;
