@@ -14,8 +14,10 @@ const Organization = ({ theme }) => {
   useEffect(() => {
     const fetch = async () => {
       const ceo = await api.ceo()
-      dispatchEmployee({ payload: { employee: ceo }, type: 'ADD' })
-      setCeoId(ceo.id)
+      if (ceo.id) {
+        dispatchEmployee({ payload: { employee: ceo }, type: 'ADD' })
+        setCeoId(ceo.id)
+      }
     }
     fetch()
   }, [])
