@@ -36,12 +36,7 @@ const Organization = ({ theme }) => {
 
   const renderTree = () => {
     return ceoId ? (
-      <Tree
-        label={<Card employee={employees[ceoId]} getStaff={generateGetStaff(ceoId)} />}
-        lineBorderRadius='12px'
-        lineColor={theme.line}
-        lineWidth='2px'
-      >
+      <Tree label={<Card employee={employees[ceoId]} getStaff={generateGetStaff(ceoId)} />} lineBorderRadius='12px' lineColor={theme.line} lineWidth='2px'>
         {renderStaff(employees[ceoId].staff || [])}
       </Tree>
     ) : null

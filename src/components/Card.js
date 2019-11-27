@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { animated, config, useSpring } from 'react-spring'
 
@@ -68,14 +68,15 @@ const Ring = styled.div`
 `
 
 const Card = ({ employee, getStaff }) => {
+  const [hovered, setHovered] = useState(false)
   const { opacity, scale } = useSpring({
     config: config.wobbly,
     from: { opacity: 0, scale: 0.9 },
-    to: { opacity: 1, scale: 1 }
+    to: { opacity: hovered ? 1 : 0.8, scale: 1 }
   })
 
   return (
-    <Main onClick={getStaff} style={{ opacity, transform: scale.interpolate(s => `scale(${s})`) }}>
+    <Main onClick={getStaff} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ opacity, transform: scale.interpolate(s => `scale(${s})`) }}>
       <Ring><Avatar src={avatar} /></Ring>
       <Name>{`${employee.first} ${employee.last}`}</Name>
       <div>
