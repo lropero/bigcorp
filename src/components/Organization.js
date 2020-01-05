@@ -34,9 +34,11 @@ const Organization = ({ theme }) => {
 
   const renderStaff = (staff) => {
     return staff.length ? (
-      staff.map((id) => <TreeNode key={id} label={<Card employee={employees[id]} getStaff={generateGetStaff(id)} />}>
-        {renderStaff(employees[id].staff || [])}
-      </TreeNode>)
+      staff.map((id) => (
+        <TreeNode key={id} label={<Card employee={employees[id]} getStaff={generateGetStaff(id)} />}>
+          {renderStaff(employees[id].staff || [])}
+        </TreeNode>
+      ))
     ) : null
   }
 
